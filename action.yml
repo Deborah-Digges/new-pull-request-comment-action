@@ -1,0 +1,13 @@
+name: 'Welcome bot on new pull requests'
+description: 'Greet new contributors on a repository'
+inputs:
+  access-token:  
+    description: 'A GitHub personal access token used to make comments on your behalf'
+    required: true
+  message:  
+    description: 'A personal message to send to a new contributor on your repository'
+    required: true
+    default: 'Welcome, {}! Thank you for your contribution'
+runs:
+  using: 'node12'
+  main: 'src/index.js'
