@@ -68,7 +68,7 @@ async function run() {
       // Comment on the pull request made by a new contributor
       if (shouldComment) {
         core.info("Commenting");
-        githubClient.issues.createComment(owner, repoName, issueNumber, comment);
+        githubClient.issues.createComment({ owner, repo: repoName, issue_number: issueNumber, body: comment });
       }
     }
   } catch (err) {
