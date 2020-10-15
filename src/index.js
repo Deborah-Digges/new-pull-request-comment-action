@@ -47,9 +47,10 @@ async function run() {
 
     const payload = github.context.payload;
     const githubClient = github.getOctokit(accessToken);
+    core.info("Request received");
 
     if (payload.action === "OPENED") {
-      core.debug("New Pull Request..");
+      core.info("New Pull Request..");
       const pullRequest = payload.pull_request;
       const userName = pullRequest.user.login;
       const owner = pullRequest.base.repo.owner.login;
@@ -66,7 +67,7 @@ async function run() {
 
       // Comment on the pull request made by a new contributor
       if (shouldComment) {
-        core.debug("Commenting");
+        core.info("Commenting");
         githubClient.issues.createComment(owner, repoName, issueNumber, comment);
       }
     }
