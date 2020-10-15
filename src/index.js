@@ -49,7 +49,7 @@ async function run() {
     const githubClient = github.getOctokit(accessToken);
     core.info("Request received");
 
-    if (payload.action === "OPENED") {
+    if (payload.action === "opened") {
       core.info("New Pull Request..");
       const pullRequest = payload.pull_request;
       const userName = pullRequest.user.login;
