@@ -58,9 +58,7 @@ async function run() {
       const issueNumber = pullRequest.number;
       const comment = message.replace(/{}/g, userName);
 
-      const shouldComment = true;
-
-      await isFirstPull(
+      const shouldComment = await isFirstPull(
         githubClient, owner, repoName,
         userName, issueNumber
       );
