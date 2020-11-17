@@ -1,7 +1,8 @@
 name: 'Welcome bot on new pull requests'
 description: 'Greet new contributors on a repository'
-icon: 'message-circle'
-color: 'green'
+branding:
+  icon: 'message-circle'
+  color: 'green'
 inputs:
   access-token:  
     description: 'A GitHub personal access token used to make comments on your behalf'
